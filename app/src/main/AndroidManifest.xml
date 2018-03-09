@@ -20,6 +20,7 @@
             android:name=".Test"
             android:label="@string/title_activity_test"
             android:theme="@style/AppTheme.NoActionBar"></activity>
+        <activity android:name=".MenuSesion"></activity>
     </application>
 
 </manifest>
