@@ -16,7 +16,8 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".MenuSesion"></activity>
+        <activity android:name=".MenuSesion" />
+        <activity android:name=".List"></activity>
     </application>
 
 </manifest>
