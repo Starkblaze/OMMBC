@@ -17,7 +17,8 @@
             </intent-filter>
         </activity>
         <activity android:name=".MenuSesion" />
-        <activity android:name=".List"></activity>
+        <activity android:name=".List" />
+        <activity android:name=".Problema_General"></activity>
     </application>
 
 </manifest>
