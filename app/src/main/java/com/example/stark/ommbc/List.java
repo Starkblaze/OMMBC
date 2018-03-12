@@ -24,7 +24,7 @@ public class List extends AppCompatActivity {
             list.add("Problema "+(i+1));
         }
         ListView prob = (ListView)findViewById(R.id.problemas);
-        TextView nprob = (TextView)findViewById(R.id.nproblemas);
+        //TextView nprob = (TextView)findViewById(R.id.nproblemas);
         final ArrayAdapter<String> adapter = new ArrayAdapter<String> (this,android.R.layout.simple_list_item_1, list);
         prob.setAdapter(adapter);
         prob.setOnItemClickListener(new AdapterView.OnItemClickListener() {
@@ -37,6 +37,6 @@ public class List extends AppCompatActivity {
                 startActivity(pro);
             }
         });
-        nprob.setText(list.size()+" problemas");
+       // nprob.setText(list.size()+" problemas");
     }
 }
