@@ -25,17 +25,18 @@ public class List extends AppCompatActivity {
             list.add("Problema "+(i+1));
         }
         ListView prob = (ListView)findViewById(R.id.problemas);
-        final ArrayAdapter<String> adapter = new ArrayAdapter<String> (this,android.R.layout.simple_list_item_1, list);
+        TextView nprob = (TextView)findViewById(R.id.nprob);
+        final ArrayAdapter<String> adapter = new ArrayAdapter<String> (this,R.layout.mylist, list);
         prob.setAdapter(adapter);
         prob.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
-                Toast toast = Toast.makeText(getApplicationContext(), "Problema "+(i+1), Toast.LENGTH_SHORT);
-                toast.show();
                 Intent pro = new Intent(List.this,Problema_General.class);
-                pro.putExtra("Nombre","Texto del problema "+(i+1));
+                pro.putExtra("Numero", (i+1));
+                pro.putExtra("Texto","Texto del problema "+(i+1));
                 startActivity(pro);
             }
         });
+        nprob.setText(list.size()+" problemas");
     }
 }
