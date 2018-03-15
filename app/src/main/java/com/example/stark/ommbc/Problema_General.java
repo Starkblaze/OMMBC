@@ -19,6 +19,8 @@ import android.widget.Toast;
 
 public class Problema_General extends AppCompatActivity {
 
+    int fav = 0;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -30,6 +32,20 @@ public class Problema_General extends AppCompatActivity {
         espacio_texto.setText(text);
         FloatingActionButton help = (FloatingActionButton)findViewById(R.id.help);
         FloatingActionButton send = (FloatingActionButton)findViewById(R.id.send);
+        final FloatingActionButton favorite = (FloatingActionButton)findViewById(R.id.favorite);
+        favorite.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if(fav==0) {
+                    favorite.setImageDrawable(getResources().getDrawable(R.drawable.ic_favorite1));
+                    fav=1;
+                }
+                else {
+                    favorite.setImageDrawable(getResources().getDrawable(R.drawable.ic_favorite0));
+                    fav=0;
+                }
+            }
+        });
         help.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -49,68 +65,5 @@ public class Problema_General extends AppCompatActivity {
             }
         });
         p.setText("Problema "+numero);
-        final Handler handler = new Handler();
-        final View h = help; // your view
-        final View s = send;
-        handler.postDelayed(new Runnable() {
-
-            @Override
-            public void run() {
-
-                Animation fadeOut = new AlphaAnimation(1, 0);
-                fadeOut.setInterpolator(new AccelerateInterpolator());
-                fadeOut.setDuration(300);
-                h.startAnimation(fadeOut);
-                h.setVisibility(View.GONE);
-                s.startAnimation(fadeOut);
-                s.setVisibility(View.GONE);
-
-            }}, 3000);
-
-        View todo = (ConstraintLayout)findViewById(R.id.layout);
-        todo.setOnTouchListener(new View.OnTouchListener() {
-            @Override
-            public boolean onTouch(View v, MotionEvent event) {
-                h.setVisibility(View.VISIBLE);
-                s.setVisibility(View.VISIBLE);
-                handler.postDelayed(new Runnable() {
-
-                    @Override
-                    public void run() {
-
-                        Animation fadeOut = new AlphaAnimation(1, 0);
-                        fadeOut.setInterpolator(new AccelerateInterpolator());
-                        fadeOut.setDuration(300);
-                        h.startAnimation(fadeOut);
-                        h.setVisibility(View.GONE);
-                        s.startAnimation(fadeOut);
-                        s.setVisibility(View.GONE);
-
-                    }}, 3000);
-                return false;
-            }
-        });
-        espacio_texto.setOnTouchListener(new View.OnTouchListener() {
-            @Override
-            public boolean onTouch(View v, MotionEvent event) {
-                h.setVisibility(View.VISIBLE);
-                s.setVisibility(View.VISIBLE);
-                handler.postDelayed(new Runnable() {
-
-                    @Override
-                    public void run() {
-
-                        Animation fadeOut = new AlphaAnimation(1, 0);
-                        fadeOut.setInterpolator(new AccelerateInterpolator());
-                        fadeOut.setDuration(300);
-                        h.startAnimation(fadeOut);
-                        h.setVisibility(View.GONE);
-                        s.startAnimation(fadeOut);
-                        s.setVisibility(View.GONE);
-
-                    }}, 3000);
-                return false;
-            }
-        });
     }
 }
