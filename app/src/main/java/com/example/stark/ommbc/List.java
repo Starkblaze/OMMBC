@@ -33,7 +33,11 @@ public class List extends AppCompatActivity {
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
                 Intent pro = new Intent(List.this,Problema_General.class);
                 pro.putExtra("Numero", (i+1));
-                pro.putExtra("Texto","Texto del problema "+(i+1));
+                String test = "Test ";
+                for(int j = 0 ; i < 450 ; i++) {
+                    test=test+"test ";
+                }
+                pro.putExtra("Texto", test);
                 startActivity(pro);
             }
         });
