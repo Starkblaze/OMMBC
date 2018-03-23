@@ -14,11 +14,19 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         Button b = (Button)findViewById(R.id.button);
+        Button c = (Button)findViewById(R.id.test_tab);
         b.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
             Intent i = new Intent(MainActivity.this, List.class);
             startActivity(i);
+            }
+        });
+        c.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent i = new Intent(MainActivity.this, Activity_Tabbed.class);
+                startActivity(i);
             }
         });
     }
