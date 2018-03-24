@@ -7,6 +7,7 @@ import android.support.constraint.ConstraintLayout;
 import android.support.design.widget.FloatingActionButton;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.widget.Toolbar;
 import android.view.MotionEvent;
 import android.view.View;
 import android.view.animation.AccelerateInterpolator;
@@ -27,7 +28,8 @@ public class Problema_General extends AppCompatActivity {
         setContentView(R.layout.activity_problema__general);
         final int numero = getIntent().getIntExtra("Numero", 0);
         final String text = getIntent().getStringExtra("Texto");
-        TextView p = (TextView)findViewById(R.id.problema);
+        Toolbar myToolbar = (Toolbar) findViewById(R.id.my_toolbar);
+        myToolbar.setTitle("Problema "+numero);
         TextView espacio_texto = (TextView)findViewById(R.id.espacio_texto);
         espacio_texto.setText(text);
         FloatingActionButton help = (FloatingActionButton)findViewById(R.id.help);
@@ -64,6 +66,5 @@ public class Problema_General extends AppCompatActivity {
                 toast.show();
             }
         });
-        p.setText("Problema "+numero);
     }
 }

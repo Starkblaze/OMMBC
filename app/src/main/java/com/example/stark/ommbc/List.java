@@ -11,6 +11,8 @@ import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 import android.widget.TextView;
+import android.widget.Toast;
+
 import java.util.ArrayList;
 
 public class List extends AppCompatActivity {
@@ -53,6 +55,7 @@ public class List extends AppCompatActivity {
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         int id = item.getItemId();
+        if(id == R.id.action_filter) Toast.makeText(getApplicationContext(), "Búsqueda", Toast.LENGTH_SHORT).show();
 
         //noinspection SimplifiableIfStatement
        /* if (id == R.id.action_settings) {

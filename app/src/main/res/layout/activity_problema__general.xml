@@ -8,67 +8,34 @@
     tools:context="com.example.stark.ommbc.Problema_General"
     tools:layout_editor_absoluteY="25dp">
 
-    <android.support.design.widget.FloatingActionButton
-        android:id="@+id/send"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_centerHorizontal="true"
-        android:layout_centerVertical="true"
-        android:layout_marginBottom="16dp"
-        android:clickable="true"
-        app:backgroundTint="#0693BE "
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/help"
-        app:layout_constraintStart_toEndOf="@+id/favorite"
-        app:srcCompat="@drawable/send_fab" />
-
-    <android.support.design.widget.FloatingActionButton
-        android:id="@+id/help"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignTop="@+id/send"
-        android:layout_marginBottom="16dp"
-        android:layout_marginEnd="16dp"
-        android:layout_toStartOf="@+id/send"
-        android:clickable="true"
-        app:backgroundTint="#003E5E "
-        app:layout_constraintBottom_toBottomOf="parent"
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/my_toolbar"
+        android:layout_width="0dp"
+        android:layout_height="56dp"
+        android:layout_marginBottom="440dp"
+        android:background="#0767A4"
+        android:elevation="4dp"
+        android:theme="@style/ToolBarStyle"
+        app:layout_constraintBottom_toTopOf="@+id/relativeLayout"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/send"
-        app:layout_constraintTop_toBottomOf="@+id/field_texto"
-        app:srcCompat="@drawable/ic_action_name" />
-
-    <TextView
-        android:id="@+id/problema"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentTop="true"
-        android:layout_marginBottom="12dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="16dp"
-        android:text="TextView"
-        android:textColor="#003E5E"
-        android:textSize="24sp"
-        android:textStyle="bold"
-        app:layout_constraintBottom_toTopOf="@+id/field_texto"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0"
+        app:popupTheme="@style/ThemeOverlay.AppCompat.Light" />
 
 
     <ScrollView
         android:id="@+id/field_texto"
         android:layout_width="0dp"
         android:layout_height="0dp"
-        android:layout_marginBottom="30dp"
-        android:layout_marginEnd="16dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="60dp"
+        android:layout_marginBottom="9dp"
+        android:layout_marginTop="54dp"
         android:overScrollMode="never"
         android:scrollbarSize="2dp"
         android:scrollbarThumbVertical="@drawable/scroll_vertical_thumb"
         android:verticalScrollbarPosition="left"
-        app:layout_constraintBottom_toTopOf="@+id/help"
+        app:layout_constraintBottom_toTopOf="@+id/relativeLayout"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
@@ -88,20 +55,55 @@
 
     </ScrollView>
 
-    <android.support.design.widget.FloatingActionButton
-        android:id="@+id/favorite"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="16dp"
-        android:layout_marginStart="16dp"
-        android:clickable="true"
-        app:backgroundTint="#003E5E "
+    <RelativeLayout
+        android:id="@+id/relativeLayout"
+        android:layout_width="0dp"
+        android:layout_height="66dp"
+        android:layout_marginBottom="5dp"
+        android:layout_marginEnd="10dp"
+        android:layout_marginStart="10dp"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/send"
-        app:layout_constraintHorizontal_chainStyle="spread_inside"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/field_texto"
-        app:layout_constraintVertical_bias="1.0"
-        app:srcCompat="@drawable/ic_favorite0" />
+        app:layout_constraintTop_toBottomOf="@+id/field_texto">
+
+        <android.support.design.widget.FloatingActionButton
+            android:id="@+id/help"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignTop="@+id/send"
+            android:layout_marginStart="42dp"
+            android:layout_toEndOf="@+id/send"
+            android:clickable="true"
+            app:backgroundTint="#003E5E "
+            app:srcCompat="@drawable/ic_action_name"
+            tools:layout_editor_absoluteX="309dp"
+            tools:layout_editor_absoluteY="478dp" />
+
+        <android.support.design.widget.FloatingActionButton
+            android:id="@+id/send"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"
+            android:clickable="true"
+            app:backgroundTint="#0693BE "
+            app:srcCompat="@drawable/send_fab"
+            tools:layout_editor_absoluteX="240dp"
+            tools:layout_editor_absoluteY="487dp" />
+
+        <android.support.design.widget.FloatingActionButton
+            android:id="@+id/favorite"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignTop="@+id/send"
+            android:layout_marginEnd="45dp"
+            android:layout_toStartOf="@+id/send"
+            android:clickable="true"
+            app:backgroundTint="#003E5E "
+            app:srcCompat="@drawable/ic_favorite0"
+            tools:layout_editor_absoluteX="150dp"
+            tools:layout_editor_absoluteY="478dp" />
+    </RelativeLayout>
 
 </android.support.constraint.ConstraintLayout>
