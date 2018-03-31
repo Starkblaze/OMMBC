@@ -3,6 +3,7 @@ package com.example.stark.ommbc;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Handler;
+import android.provider.MediaStore;
 import android.support.constraint.ConstraintLayout;
 import android.support.design.widget.FloatingActionButton;
 import android.support.v7.app.AppCompatActivity;
@@ -17,10 +18,13 @@ import android.view.animation.TranslateAnimation;
 import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
+import android.widget.ImageView;
+import android.graphics.Bitmap;
 
 public class Problema_General extends AppCompatActivity {
 
     int fav = 0;
+    ImageView imageView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -35,6 +39,9 @@ public class Problema_General extends AppCompatActivity {
         FloatingActionButton help = (FloatingActionButton)findViewById(R.id.help);
         FloatingActionButton send = (FloatingActionButton)findViewById(R.id.send);
         final FloatingActionButton favorite = (FloatingActionButton)findViewById(R.id.favorite);
+
+        imageView = (ImageView)findViewById(R.id.imageView);
+
         favorite.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -62,8 +69,15 @@ public class Problema_General extends AppCompatActivity {
         send.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Toast toast = Toast.makeText(getApplicationContext(), "Inviar Solucion", Toast.LENGTH_SHORT);
-                toast.show();
+                //Toast toast = Toast.makeText(getApplicationContext(), "Inviar Solucion", Toast.LENGTH_SHORT);
+                //toast.show();
+
+                try {
+                    Intent intent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
+                    startActivityForResult(intent, 0);
+                }catch(Exception e){
+                    e.printStackTrace();
+                }
             }
         });
     }
