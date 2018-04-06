@@ -66,11 +66,15 @@
             android:id="@+id/text_input_edit_text"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="Email"
+            android:hint="Correo electr\u00F3nico"
+            android:drawableLeft="@drawable/ic_profile"
+            android:drawablePadding="5dp"
+            android:drawableStart="@drawable/ic_profile"
             android:inputType="text"
             android:maxLines="1"
             android:textColor="#003E5E"
-            android:textColorHint="#003E5E" />
+            android:textColorHint="#003E5E"
+            android:theme="@style/TextLabel"/>
 
         <android.support.design.widget.TextInputLayout
             android:id="@+id/text_input__user_password"
@@ -84,11 +88,12 @@
             android:id="@+id/text_input_edit_text_password"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="Password"
+            android:hint="Contraseña"
             android:inputType="textPassword"
             android:maxLines="1"
             android:textColor="#003E5E"
-            android:textColorHint="#003E5E" />
+            android:textColorHint="#003E5E"
+            android:theme="@style/TextLabel"/>
 
 
         <android.support.v7.widget.AppCompatButton
