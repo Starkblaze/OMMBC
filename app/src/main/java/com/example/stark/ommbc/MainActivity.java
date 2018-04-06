@@ -23,7 +23,7 @@ public class MainActivity extends AppCompatActivity {
         btnLogin.setOnClickListener(new OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent MyIntent = new Intent(MainActivity.this, Activity_Tabbed.class);
+                Intent MyIntent = new Intent(MainActivity.this, List.class);
                 startActivity(MyIntent);
                 finish(); //Block back button
 
