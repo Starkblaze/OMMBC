@@ -25,7 +25,7 @@ public class List extends AppCompatActivity {
         myToolbar.setTitle("Problemas");
         setSupportActionBar(myToolbar);
         ArrayList<String> list = new ArrayList<String>();
-        for(int i = 0; i < 25 ; i++){
+        for(int i = 0; i < 500 ; i++){
             list.add("Problema "+(i+1));
         }
         ListView prob = (ListView)findViewById(R.id.problemas);
@@ -37,7 +37,7 @@ public class List extends AppCompatActivity {
                 Intent pro = new Intent(List.this,Problema_General.class);
                 pro.putExtra("Numero", (i+1));
                 String test = "Test ";
-                for(int j = 0 ; i < 450 ; i++) {
+                for(int j = 0 ; i < 850 ; i++) {
                     test=test+"test ";
                 }
                 pro.putExtra("Texto", test);
