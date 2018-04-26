@@ -2,8 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://C:\Users\Hermes\Desktop\OMMBC2\OMMBC.iml" filepath="C:\Users\Hermes\Desktop\OMMBC2\OMMBC.iml" />
-      <module fileurl="file://$PROJECT_DIR$/.idea/OMMBC2.iml" filepath="$PROJECT_DIR$/.idea/OMMBC2.iml" />
+      <module fileurl="file://$PROJECT_DIR$/OMMBC.iml" filepath="$PROJECT_DIR$/OMMBC.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
     </modules>
   </component>
